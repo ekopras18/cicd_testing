@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  checking-and-Deploy:
+  checking:
     runs-on: ubuntu-latest
     steps:
       - name: Checking out the repository
@@ -15,7 +15,9 @@ jobs:
           echo "Checking Dependencies Complete"
           echo "Checking Data Complete"
           echo "All Complete..."
-    # Steps represent a sequence of tasks that will be executed as part of the job
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
     steps:
       - name: Deploying to Server
         run: |
