@@ -36,12 +36,7 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
-          script: |
-            cd /var/www/html/test/cicd_testing
-            git fetch origin master 
-            git pull origin master
-            ls -la
-            echo "Deployed Successfully"
+          script: cd /var/www/html/test/cicd_testing && git pull origin master 
       - name: feedback
         if: steps.automerge.outputs.mergeResult == 'merged'
         run: echo "Pull request ${{ steps.automerge.outputs.pullRequestNumber }} merged!"
