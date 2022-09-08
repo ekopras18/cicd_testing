@@ -20,7 +20,6 @@ on:
     types:
       - completed
   status: {}
-
 jobs:
   automerge:
     runs-on: ubuntu-latest
@@ -28,14 +27,13 @@ jobs:
       - id: automerge
         name: automerge
         uses: "pascalgn/automerge-action@v0.15.3"
-        # env:
-        #   GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+        env:
+          GITHUB_TOKEN: "${{ secrets.TOKEN_GITHUB }}"
       - name: feedback
         if: steps.automerge.outputs.mergeResult == "merged"
         run: |
           echo "Pull request ${{ steps.automerge.outputs.pullRequestNumber }} merged!"
 
-    steps:
       - name: Deploying to Staging Server
         uses: appleboy/ssh-action@master
         with:
