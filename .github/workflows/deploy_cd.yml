@@ -40,7 +40,7 @@ jobs:
             cd /var/www/html/test/cicd_testing
             git fetch origin master 
             git pull origin master
-            ls -all
+            ls -la
             echo "Deployed Successfully"
       - name: feedback
         if: steps.automerge.outputs.mergeResult == 'merged'
