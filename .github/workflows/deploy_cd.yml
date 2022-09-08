@@ -1,9 +1,11 @@
 name: CD TEST
 on:
-  push:
+  # push:
+  #   branches: [ master ]
+  merge:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
+  # pull_request:
+  #   branches: [ master ]
 jobs:
   checking-and-deploying:
     runs-on: ubuntu-latest
