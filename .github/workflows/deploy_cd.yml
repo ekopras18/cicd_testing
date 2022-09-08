@@ -33,7 +33,7 @@ jobs:
         if: steps.automerge.outputs.mergeResult == "merged"
         run: |
           echo "Pull request ${{ steps.automerge.outputs.pullRequestNumber }} merged!"
-    steps:
+          
       - name: Deploying to Staging Server
         uses: appleboy/ssh-action@master
         with:
