@@ -36,7 +36,6 @@ jobs:
           MERGE_REQUIRED_APPROVALS: "0"
           UPDATE_LABELS: ""
           UPDATE_METHOD: "rebase"
-          PULL_REQUEST: "1234"
 
       - name: feedback
         if: steps.automerge.outputs.mergeResult == 'merged'
