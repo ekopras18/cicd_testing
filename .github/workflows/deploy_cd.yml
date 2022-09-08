@@ -29,11 +29,6 @@ jobs:
         uses: "pascalgn/automerge-action@v0.15.3"
         env:
           GITHUB_TOKEN: "${{ secrets.TOKEN_GITHUB }}"
-      - name: feedback
-        if: steps.automerge.outputs.mergeResult == 'merged'
-        run: |
-          echo "Pull request ${{ steps.automerge.outputs.pullRequestNumber }} merged!"
-
       - name: Deploying to Staging Server
         uses: appleboy/ssh-action@master
         with:
@@ -43,6 +38,10 @@ jobs:
           port: 22
           script: |
             cd /var/www/html/test/cicd_testing
+            git fetch origin master 
             git pull origin master
             ls -all
             echo "Deployed Successfully"
+      - name: feedback
+        if: steps.automerge.outputs.mergeResult == 'merged'
+        run: echo "Pull request ${{ steps.automerge.outputs.pullRequestNumber }} merged!"
