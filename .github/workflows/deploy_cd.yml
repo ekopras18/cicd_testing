@@ -22,16 +22,3 @@ jobs:
             git pull origin master
             ls -all
             echo "Deployed Successfully"
-
-#       - name: Checking out the repository
-#         run: |
-#           echo "Checking Dependencies Complete"
-#           echo "Checking Data Complete"
-#           echo "All Complete..."
-# # jobs:
-# #   deploy:
-# #     runs-on: ubuntu-latest
-# #     steps:
-#       - name: Deploying to Server
-#         run: |
-#           echo "Deploy Complete."
