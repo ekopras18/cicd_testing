@@ -1,7 +1,7 @@
 name: CD TEST
 on:
-  push:
-    branches: [ master ]
+  # push:
+  #   branches: [ master ]
   pull_request:
     branches: [ master ]
     types:
