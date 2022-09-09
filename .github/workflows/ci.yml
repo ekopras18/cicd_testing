@@ -1,0 +1,24 @@
+name: CI (Continuous Integration)
+on:
+  pull_request:
+    branches: 
+      - master
+jobs:
+  TestingUnit: 
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        fetch-depth: 1
+
+    - name: Install Requirements
+      run: |
+        echo "Installing Requirements Done..!"
+
+    - name: Prepare Application
+      run: |
+        echo "Prepare Apps Done...!"
+
+    - name: Run Testsuite
+      run: |
+        echo "Run Testsuite Done...!"
