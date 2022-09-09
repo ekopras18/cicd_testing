@@ -18,7 +18,6 @@ jobs:
           port: 22
           script: |
             cd /var/www/html/test/cicd_testing && git pull origin master
-            sh -e {0}
-          script_stop: true
-          debug: false
+          # script_stop: true
+          # debug: false
       
