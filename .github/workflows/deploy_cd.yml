@@ -17,7 +17,6 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: |
-            cd /var/www/html/test/cicd_testing && git pull origin master
-          # script_stop: true
-          # debug: false
+            cd /var/www/html/test/cicd_testing && git pull origin master 
+          |
       
